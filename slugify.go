@@ -7,7 +7,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/eschmar/go-slugify/slug"
+	"github.com/eschmar/slugify/slug"
 )
 
 // ANSI coloured output modes
