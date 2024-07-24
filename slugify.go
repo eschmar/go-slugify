@@ -39,7 +39,8 @@ func main() {
 
 		// Extract base name and extension, then slugify
 		extension := path.Ext(input)
-		name := strings.TrimSuffix(path.Base(input), extension)
+		pathTo, name := path.Split(input)
+		name = strings.TrimSuffix(name, extension)
 
 		result := slug.Ify(name)
 		if !info.IsDir() {
@@ -47,7 +48,7 @@ func main() {
 		}
 
 		// Rename file or directory
-		err = os.Rename(input, result)
+		err = os.Rename(input, pathTo+result)
 
 		if err == nil {
 			fmt.Printf(" %s✓%s %s %s(%s)%s\n", ansiBrightGreen, ansiReset, result, ansiFaint, input, ansiReset)
