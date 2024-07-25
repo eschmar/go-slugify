@@ -308,6 +308,7 @@ var replacementRules strings.Replacer = *strings.NewReplacer(
 	"ż", "z",
 	"Ž", "Z",
 	"ž", "z",
+	"&", "and",
 )
 
 func Ify(input string) string {
