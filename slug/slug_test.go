@@ -37,3 +37,10 @@ func TestSlugify(t *testing.T) {
 		})
 	}
 }
+
+// 3871 ns/op
+func BenchmarkSlugify(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = Ify(" Importànt Dôcument (³)_copy final [36900fe]-compressed (((((8)))))---")
+	}
+}
