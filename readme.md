@@ -14,6 +14,7 @@ go install -v github.com/eschmar/slugify@latest
 
 ```sh
 slugify "path/to/file"
+slugify path/with/wildcard*
 ls *.mp4 | xargs -d '\n' slugify # GNU xargs
 ls *.mp4 | tr \\n \\0 | xargs -0 slugify # macOS
 ```
